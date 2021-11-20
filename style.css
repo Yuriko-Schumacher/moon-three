@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	background: black;
+	color: white;
+	font-family: "Courier New", Courier, monospace;
+	overflow-x: hidden;
+}
+
+/* #app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+} */
+
+canvas {
+	width: 100vw;
+}
+
+.h-screen {
+	height: 100vh;
+}
+
+h1 {
+	margin-left: 3em;
+}
