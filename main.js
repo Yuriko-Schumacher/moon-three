@@ -1,11 +1,4 @@
-const vertexShader = document.querySelector("#vertex").text;
 console.log(vertexShader);
-const fragmentShader = document.querySelector("#fragment").text;
-const atmosphereVertexShader =
-	document.querySelector("#atmosphere-vertex").text;
-const atmosphereFragmentShader = document.querySelector(
-	"#atmosphere-fragment"
-).text;
 
 const canvasContainer = document.querySelector("#canvasContainer");
 
@@ -26,34 +19,34 @@ renderer.setPixelRatio(window.devicePixelRatio);
 // create a sphere
 const geometry = new THREE.SphereGeometry(5, 50, 50);
 const texture = new THREE.TextureLoader().load("./img/moon.jpeg");
-const material = new THREE.MeshBasicMaterial({
+const material = new THREE.ShaderMaterial({
 	// color: 0xff0000,
-	map: texture,
-	// vertexShader, // vertexShader: vertexShader
-	// fragmentShader, // fragmentShader: fragmentShader
-	// uniforms: {
-	// 	globeTexture: {
-	// 		value: texture,
-	// 	},
-	// },
+	// map: texture,
+	vertexShader, // vertexShader: vertexShader
+	fragmentShader, // fragmentShader: fragmentShader
+	uniforms: {
+		globeTexture: {
+			value: texture,
+		},
+	},
 });
 const sphere = new THREE.Mesh(geometry, material);
-// scene.add(sphere);
+scene.add(sphere);
 
-// // create atmosphere
-// const atmosphereGeometry = new THREE.SphereGeometry(5, 50, 50);
-// const atmosphereMaterial = new THREE.ShaderMaterial({
-// 	// color: 0xff0000,
-// 	// map: texture,
-// 	vertexShader: atmosphereVertexShader,
-// 	fragmentShader: atmosphereFragmentShader,
-// 	blending: THREE.AdditiveBlending,
-// 	side: THREE.BackSide,
-// });
-// const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
-// atmosphere.scale.set(1.1, 1.1, 1.1);
+// create atmosphere
+const atmosphereGeometry = new THREE.SphereGeometry(5, 50, 50);
+const atmosphereMaterial = new THREE.ShaderMaterial({
+	// color: 0xff0000,
+	// map: texture,
+	vertexShader: atmosphereVertexShader,
+	fragmentShader: atmosphereFragmentShader,
+	blending: THREE.AdditiveBlending,
+	side: THREE.BackSide,
+});
+const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+atmosphere.scale.set(1.1, 1.1, 1.1);
 
-// scene.add(atmosphere);
+scene.add(atmosphere);
 
 const group = new THREE.Group();
 group.add(sphere);
