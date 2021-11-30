@@ -115,10 +115,17 @@ d3.csv("data/manmade_material_location_available.csv", function (d) {
 });
 
 sphere.rotation.y = -Math.PI / 2;
+group.rotation.offset = {
+	x: 0,
+	y: 0,
+};
 
 const mouse = {
 	x: undefined,
 	y: undefined,
+	down: false,
+	xPrev: undefined,
+	yPrev: undefined,
 };
 
 const raycaster = new THREE.Raycaster();
@@ -128,20 +135,10 @@ const category = document.querySelector("#category");
 const country = document.querySelector("#country");
 const year = document.querySelector("#year");
 
-addEventListener("mousemove", (event) => {
-	mouse.x = (event.clientX / innerWidth) * 2 - 1;
-	mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-
-	gsap.set(tooltip, {
-		x: event.clientX,
-		y: event.clientY,
-	});
-});
-
 function animate() {
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
-	group.rotation.y += 0.0005;
+	// group.rotation.y += 0.0005;
 
 	// group.rotation.y = mouse.x;
 
@@ -185,3 +182,43 @@ function animate() {
 
 animate();
 // renderer.render(scene, camera);
+
+canvasContainer.addEventListener("mousedown", ({ clientX, clientY }) => {
+	mouse.down = true;
+	mouse.xPrev = clientX;
+	mouse.yPrev = clientY;
+});
+
+addEventListener("mousemove", (event) => {
+	mouse.x = (event.clientX / innerWidth) * 2 - 1;
+	mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+
+	gsap.set(tooltip, {
+		x: event.clientX,
+		y: event.clientY,
+	});
+
+	if (mouse.down) {
+		event.preventDefault();
+		const deltaX = event.clientX - mouse.xPrev;
+		const deltaY = event.clientY - mouse.yPrev;
+
+		group.rotation.offset.x += deltaY * 0.005;
+		group.rotation.offset.y += deltaX * 0.005;
+
+		gsap.to(group.rotation, {
+			y: group.rotation.offset.y,
+			x: group.rotation.offset.x,
+			duration: 2,
+		});
+
+		// group.rotation.y += deltaX * 0.005;
+		// group.rotation.x += deltaY * 0.005;
+		mouse.xPrev = event.clientX;
+		mouse.yPrev = event.clientY;
+	}
+});
+
+addEventListener("mouseup", (event) => {
+	mouse.down = false;
+});
