@@ -5,17 +5,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Moon surface</title>
 		<link href="style.css" rel="stylesheet" />
+		<script src="https://d3js.org/d3.v7.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 		<script src="shaders.js"></script>
 	</head>
 	<body>
-		<div class="flex h-screen">
-			<div>
-				<h1>Moon surface</h1>
-			</div>
-			<div id="canvasContainer"><canvas></canvas></div>
+		<div class="tooltip">
+			<strong><span id="object">Object</span></strong
+			><br />
+			<span id="country">Country</span>
+			<span id="category">Category</span><br />
+			<span id="year">Year</span>
 		</div>
+		<div id="canvasContainer"><canvas></canvas></div>
 		<script type="module" src="main.js"></script>
 	</body>
 </html>

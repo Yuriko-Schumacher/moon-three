@@ -2,7 +2,8 @@ body {
 	margin: 0;
 	background: black;
 	color: white;
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
 	overflow-x: hidden;
 }
 
@@ -17,12 +18,23 @@ body {
 
 canvas {
 	width: 100vw;
-}
-
-.h-screen {
 	height: 100vh;
 }
 
 h1 {
 	margin-left: 3em;
+}
+
+.tooltip {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.75);
+	padding: 0.8em 1em;
+	border-radius: 0.3em;
+}
+
+.tooltip p {
+	margin: 0;
 }

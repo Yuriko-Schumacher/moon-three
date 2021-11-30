@@ -1,5 +1,3 @@
-console.log(vertexShader);
-
 const canvasContainer = document.querySelector("#canvasContainer");
 
 const scene = new THREE.Scene();
@@ -17,7 +15,8 @@ renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 // create a sphere
-const geometry = new THREE.SphereGeometry(5, 50, 50);
+const radius = 5;
+const geometry = new THREE.SphereGeometry(radius, 50, 50);
 const texture = new THREE.TextureLoader().load("./img/moon.jpeg");
 const material = new THREE.ShaderMaterial({
 	// color: 0xff0000,
@@ -34,7 +33,7 @@ const sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
 
 // create atmosphere
-const atmosphereGeometry = new THREE.SphereGeometry(5, 50, 50);
+const atmosphereGeometry = new THREE.SphereGeometry(radius, 50, 50);
 const atmosphereMaterial = new THREE.ShaderMaterial({
 	// color: 0xff0000,
 	// map: texture,
@@ -75,25 +74,113 @@ scene.add(stars);
 
 camera.position.z = 10;
 
+const pointRadius = 0.1;
+
+function createPoint(data) {
+	const pointGeometry = new THREE.SphereGeometry(pointRadius, 50, 50);
+	const pointMaterial = new THREE.MeshBasicMaterial({
+		color: "#FFF01F",
+		opacity: 0.4,
+		transparent: true,
+	});
+	const point = new THREE.Mesh(pointGeometry, pointMaterial);
+
+	// Apollo 11 landing location 0.41 N	23.26 E
+	const north = (data.north / 180) * Math.PI;
+	const east = (data.east / 180) * Math.PI;
+
+	const x = radius * Math.cos(north) * Math.sin(east);
+	const y = radius * Math.sin(north);
+	const z = radius * Math.cos(north) * Math.cos(east);
+
+	point.position.x = x;
+	point.position.y = y;
+	point.position.z = z;
+
+	point.object = data.object;
+	point.category = data.us_category;
+	point.country = data.country;
+	point.year = data.launch_year;
+
+	group.add(point);
+}
+
+d3.csv("data/manmade_material_location_available.csv", function (d) {
+	d.north = +d.north;
+	d.east = +d.east;
+	return d;
+}).then(function (data) {
+	console.log(data);
+	data.forEach((d) => createPoint(d));
+});
+
+sphere.rotation.y = -Math.PI / 2;
+
 const mouse = {
 	x: undefined,
 	y: undefined,
 };
+
+const raycaster = new THREE.Raycaster();
+const tooltip = document.querySelector(".tooltip");
+const object = document.querySelector("#object");
+const category = document.querySelector("#category");
+const country = document.querySelector("#country");
+const year = document.querySelector("#year");
+
 addEventListener("mousemove", (event) => {
 	mouse.x = (event.clientX / innerWidth) * 2 - 1;
 	mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+
+	gsap.set(tooltip, {
+		x: event.clientX,
+		y: event.clientY,
+	});
 });
 
 function animate() {
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
-	sphere.rotation.y += 0.001;
+	group.rotation.y += 0.0005;
+
 	// group.rotation.y = mouse.x;
-	gsap.to(group.rotation, {
-		x: -mouse.y * 0.3,
-		y: mouse.x * 0.5,
-		duration: 2,
+
+	// if (mouse.x) {
+	// 	gsap.to(group.rotation, {
+	// 		x: -mouse.y * 1.5,
+	// 		y: mouse.x * 1.5,
+	// 		duration: 2,
+	// 	});
+	// }
+
+	raycaster.setFromCamera(mouse, camera);
+	const intersects = raycaster.intersectObjects(
+		group.children.filter(
+			(mesh) => mesh.geometry.parameters.radius === pointRadius
+		)
+	);
+
+	group.children.forEach((mesh) => {
+		mesh.material.opacity = 0.4;
 	});
+
+	gsap.set(tooltip, {
+		display: "none",
+	});
+
+	for (let i = 0; i < intersects.length; i++) {
+		const point = intersects[i].object;
+		point.material.opacity = 1;
+		gsap.set(tooltip, {
+			display: "block",
+		});
+		object.innerHTML = point.object;
+		category.innerHTML = point.category ? point.category : "";
+		country.innerHTML = point.country;
+		year.innerHTML = point.year;
+	}
+
+	renderer.render(scene, camera);
 }
 
 animate();

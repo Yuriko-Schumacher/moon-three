@@ -1,0 +1,65 @@
+object,count,location_raw,north,east,us_category,country,launch_year
+Ranger 4,,"-15.5  ̊ N, -130.7 E",-15.5,-130.7,Non-Apollo,US,1962
+Ranger 6,,"9.388  ̊ N, 21.480  ̊ E",9.388,21.48,Non-Apollo,US,1964
+Ranger 7,,"-10.63  ̊ N, -20.60  ̊ E",-10.63,-20.6,Non-Apollo,US,1964
+Ranger 8,,"2.638  ̊ N, 24.787  ̊ E",2.638,24.787,Non-Apollo,US,1965
+Ranger 9,,"112.828  ̊ N, -2.387  ̊ E",112.828,-2.387,Non-Apollo,US,1965
+Surveyor 1,,"-2.474  ̊ N, -43.339  ̊ E",-2.474,-43.339,Non-Apollo,US,1966
+Lunar Orbiter 1,,"6.70  ̊ N, 162  ̊ E",6.7,162,Non-Apollo,US,1966
+Surveyor 2,,"5.5  ̊ N, -12  ̊ E",5.5,-12,Non-Apollo,US,1966
+Lunar Orbiter 2,,"3.0  ̊ N, 119  ̊ E",3,119,Non-Apollo,US,1966
+Lunar Orbiter 3,,"14.3  ̊ N, -97.7 E",14.3,-97.7,Non-Apollo,US,1967
+Surveyor 3,,"-3.015  ̊ N, -23.418  ̊ E",-3.015,-23.418,Non-Apollo,US,1967
+Lunar Orbiter 5,,"-3  ̊ N, -83  ̊ E",-3,-83,Non-Apollo,US,1967
+Surveyor 5,,"1.461  ̊ N, 23.195  ̊ E",1.461,23.195,Non-Apollo,US,1967
+Surveyor 6,,"0.473  ̊ N, -1.427  ̊ E",0.473,-1.427,Non-Apollo,US,1967
+Surveyor 7,,"-40.980  ̊ N, -11.509  ̊ E",-40.98,-11.509,Non-Apollo,US,1968
+LCROSS Shepherding Spacecraft,,"-84.72  ̊ N, -49.62  ̊ E (South Pole)",-84.72,-49.62,Non-Apollo,US,2009
+LCROSS Centaur,,"-84.9  ̊ N, -35.5  ̊ E (South Pole)",-84.9,-35.5,Non-Apollo,US,2009
+Landing Location,,"0.41  ̊ N, 23.26  ̊ E",0.41,23.26,Apollo 11,US,1969
+Ascent Stage  ,1,"0.67337  ̊ N, 23.47293  ̊ E",0.67337,23.47293,Apollo 11,US,1969
+Lunar Retro-Ranging Reflector Experiment,1,"0.67408  ̊ N, 23.47297  ̊ E",0.67408,23.47297,Apollo 11,US,1969
+Landing Location,,"-3.11  ̊ N, -23.23  ̊ E",-3.11,-23.23,Apollo 12,US,1969
+LM Ascent Stage,1,"-3.94  ̊ N, -21.20  ̊ E",-3.94,-21.2,Apollo 12,US,1969
+Central Station,,"-3.00942  ̊ N, -23.42458  ̊ E",-3.00942,-23.42458,Apollo 12,US,1969
+LM Descent Stage (plaque attached),1,"-3.01239  ̊ N, -23.42157  ̊ E",-3.01239,-23.42157,Apollo 12,US,1969
+S-IVB,,"-2.553  ̊ N, 27.887  ̊ E",-2.553,27.887,Apollo 13,US,1970
+Landing Location,," -3.40  ̊ N, -17.28  ̊ E",-3.4,-17.28,Apollo 14,US,1971
+S-IVB,,"-8.179  ̊ N, 26.031  ̊ E",-8.179,26.031,Apollo 14,US,1971
+LM Ascent Stage,1,"-3.42  ̊ N, -19.67  ̊ E",-3.42,-19.67,Apollo 14,US,1971
+Central Station,,"-3.64398  ̊ N, -17.47748  ̊ E",-3.64398,-17.47748,Apollo 14,US,1971
+Laser Range Reflector (see below),,"-3.64421  ̊ N, -17.47880  ̊ E",-3.64421,-17.4788,Apollo 14,US,1971
+LM Descent Stage (plaque attached),1,"-3.64530  ̊ N, -17.47136  ̊ E",-3.6453,-17.47136,Apollo 14,US,1971
+Landing Location,,"26.6  ̊ N, 3.39  ̊ E",26.6,3.39,Apollo 15,US,1971
+S-IVB,,"-1.288  ̊ N, -11.824  ̊ E",-1.288,-11.824,Apollo 15,US,1971
+Ascent Stage,1,"26.36  ̊ N, 0.25  ̊ E",26.36,0.25,Apollo 15,US,1971
+Central Station,,"26.13407  ̊ N, 3.62981  ̊ E",26.13407,3.62981,Apollo 15,US,1971
+Laser Range Reflector,,"26.13333  ̊ N, 3.62837  ̊ E",26.13333,3.62837,Apollo 15,US,1971
+LM Descent Stage (plaque attached),1,"26.13222  ̊ N, 3.63386  ̊ E",26.13222,3.63386,Apollo 15,US,1971
+Landing Location,,"-8.973  ̊ N, 15.31  ̊ E",-8.973,15.31,Apollo 16,US,1972
+Central Station,,"-8.97537  ̊ N, 15.49812  ̊ E",-8.97537,15.49812,Apollo 16,US,1972
+LM Descent Stage (plaque attached),,"-8.97301  ̊ N, 15.50019  ̊ E",-8.97301,15.50019,Apollo 16,US,1972
+Landing Location,,"20.10  ̊ N, 30.46  ̊ E",20.1,30.46,Apollo 17,US,1972
+S-IVB,,"-4.167  ̊ N, -12.33  ̊ E",-4.167,-12.33,Apollo 17,US,1972
+Ascent Stage,,"19.96  ̊ N, 30.50  ̊ E",19.96,30.5,Apollo 17,US,1972
+Central Station,,"20.19209  ̊ N, 30.76492  ̊ E",20.19209,30.76492,Apollo 17,US,1972
+LM Descent Stage (plaque attached),,"20.19080  ̊ N, 30.77168  ̊ E",20.1908,30.77168,Apollo 17,US,1972
+Luna 2,,"29.1  ̊ N, 0  ̊ E",29.1,0,,Soviet,1959
+Luna 5,,"8  ̊ N, -23  ̊ E",8,-23,,Soviet,1965
+Luna 7,,"9.8  ̊ N, -47.8  ̊ E",9.8,-47.8,,Soviet,1965
+Luna 8,,"9.1  ̊ N, -63.3  ̊ E",9.1,-63.3,,Soviet,1965
+Luna 9,,"7.08  ̊ N, -64.37  ̊ E",7.08,-64.37,,Soviet,1966
+Luna 13,,"18.87  ̊ N, -62.05  ̊ E",18.87,-62.05,,Soviet,1966
+Luna 16 descent stage,,"-0.513  ̊ N, 56.364  ̊ E",-0.513,56.364,,Soviet,1970
+Luna 17 Lander,,"38.238  ̊ N, -34.997  ̊ E",38.238,-34.997,,Soviet,1970
+Lunokhod 1,,"38.316  ̊ N, -35.004  ̊ E",38.316,-35.004,,Soviet,1970
+Luna 18,,"3.760  ̊ N, 56.655  ̊ E",3.76,56.655,,Soviet,1971
+Luna 20 descent stage,,"3.787  ̊ N, 56.625  ̊ E",3.787,56.625,,Soviet,1972
+Luna 21 Lander,,"26.003  ̊ N, 30.408  ̊ E",26.003,30.408,,Soviet,1973
+Lunokhod 2,,"25.827  ̊ N, 30.919  ̊ E",25.827,30.919,,Soviet,1973
+Luna 23,,"12.666  ̊ N, 62.151  ̊ E",12.666,62.151,,Soviet,1974
+Luna 24 descent stage,,"12.714  ̊ N, 62.213  ̊ E",12.714,62.213,,Soviet,1976
+Chang’e 1 Orbiter,,"-1.50  ̊ N, 52.36  ̊ E",-1.5,52.36,,China,2007
+Hiten spacecraft,,"55.3  ̊ N, -34.0  ̊ E",55.3,-34,,Japan,1990
+Kaguya orbiter (SELENE),,"-65.5  ̊ N, 80.4  ̊ E",-65.5,80.4,,Japan,2007
+SMART-1 (controlled crash),,"-34.4  ̊ N, - 46.2  ̊ E",-34.4,-46.2,,ESA,2006
