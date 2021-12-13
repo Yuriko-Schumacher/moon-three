@@ -33,6 +33,16 @@ h1 {
   transform: translate(-50%, 0);
 }
 
+a:link, a:visited {
+  color: rgb(211, 211, 2);
+}
+
+a {
+  position: fixed;
+  bottom: 1rem;
+  left: 2rem;
+}
+
 .tooltip {
 	display: none;
 	position: fixed;
