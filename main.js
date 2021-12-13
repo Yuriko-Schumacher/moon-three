@@ -208,7 +208,7 @@ addEventListener("mousemove", (event) => {
 
 		gsap.to(group.rotation, {
 			y: group.rotation.offset.y,
-			x: group.rotation.offset.x,
+			// x: group.rotation.offset.x,
 			duration: 2,
 		});
 
