@@ -37,9 +37,15 @@ a:link, a:visited {
   color: rgb(211, 211, 2);
 }
 
+a:hover {
+  color: gray;
+  transition: all 0.4s ease;
+}
+
 a {
   position: fixed;
-  bottom: 1rem;
+  font-size: 1.5rem;
+  top: 1rem;
   left: 2rem;
 }
 
